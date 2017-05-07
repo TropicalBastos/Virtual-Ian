@@ -8,4 +8,4 @@ Uses gradle for building and cleaning though there is an already working jar in 
 
 
 Here's a screenshot of the application:<br><br>
-![alt text](res/screen.png?)
+![alt text](res/screen.png?raw=true "Screenshot"))
