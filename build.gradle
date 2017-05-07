@@ -1,0 +1,41 @@
+buildscript {
+
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    mainClass = 'virtual.ian.VirtualIan'
+    vendor = 'IanBastos'
+}
+
+sourceSets{
+  main{
+    java{
+      srcDir 'src'
+    }
+    resources{
+      srcDir 'src'
+    }
+  }
+}
+
+jar{
+  manifest.attributes 'Main-Class':'virtual.ian.VirtualIan'
+}

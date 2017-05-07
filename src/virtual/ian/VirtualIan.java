@@ -1,12 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+package virtual.ian;
 
 import java.util.Random;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,8 +31,6 @@ public class VirtualIan extends Application {
     @FXML TextArea area;
     @FXML Label type;
 
-    public VirtualIan(){}
-
     public static void main(String[] args){
         launch(args);
     }
@@ -46,22 +39,21 @@ public class VirtualIan extends Application {
     public void start(Stage stage){
 
         primaryStage=stage;
-        loader=new FXMLLoader(getClass().getResource("main.fxml"));
+        loader=new FXMLLoader(getClass().getResource("fxml/main.fxml"));
         loader.setController(this);
         try{
             root=(Parent)loader.load();
+            icon = new Image(getClass().getResourceAsStream("resources/icon.png"));
+            primaryStage.getIcons().add(icon);
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("css/style.css").toExternalForm());
+            primaryStage.setTitle("Ian Virtual");
+            primaryStage.setScene(scene);
+            primaryStage.setResizable(false);
+            primaryStage.show();
         }catch(Exception e){
-
+          e.printStackTrace();
         }
-        icon = new Image(getClass().getResourceAsStream("icon.png"));
-        primaryStage.getIcons().add(icon);
-        Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
-        primaryStage.setTitle("Ian Virtual");
-        primaryStage.setScene(scene);
-        primaryStage.setResizable(false);
-        primaryStage.show();
-
     }
 
         public String response(String input){
