@@ -6,8 +6,6 @@ A JavaFX application that is an overly loving AI software version of me that I c
 
 Uses gradle for building and cleaning though there is an already working jar in build/libs
 
-
-
-
+<br><br>
 Here's a screenshot of the application:<br><br>
 ![alt text](res/screen.jpg?raw=true "Screenshot"))
